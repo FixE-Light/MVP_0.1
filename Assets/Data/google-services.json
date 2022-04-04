@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "824433011486",
+    "project_id": "unity-327d2",
+    "storage_bucket": "unity-327d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824433011486:android:d492b6f7aa96fbd94a370f",
+        "android_client_info": {
+          "package_name": "com.google.firebase.fixE"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824433011486-5o5q4t3j4htq2756lf8ifh282at7ceqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoLEuxOQ2PI9ENKRHCDhOABtK_-H9cwak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824433011486-5o5q4t3j4htq2756lf8ifh282at7ceqo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "824433011486-7dpar843uu1hmcd3ah2p7lak7mgk60mm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.google.firebase.fixE"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
