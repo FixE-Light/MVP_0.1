@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 4933852524160526462}
   - component: {fileID: 1133659690402253242}
   - component: {fileID: 5992078947997092016}
+  - component: {fileID: 3934423574972915618}
   m_Layer: 0
   m_Name: PlayerAvatar
   m_TagString: Untagged
@@ -300,6 +301,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &3934423574972915618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6727162177406591926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3500759773711664189eee129a4e5a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayNameText: {fileID: 5307166448821722365}
 --- !u!1 &7025224395712169506
 GameObject:
   m_ObjectHideFlags: 0
