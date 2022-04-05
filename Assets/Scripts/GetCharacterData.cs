@@ -16,26 +16,26 @@ public class GetCharacterData : MonoBehaviour
     [SerializeField] private TMP_Text _attackText;
     [SerializeField] private TMP_Text _defenseText;
 
+    private ListenerRegistration _listenerRegistration;
     void Start()
-    {
-
-    }
-    public void GetData()
     {
         var firestore = FirebaseFirestore.DefaultInstance;
 
-        firestore.Document(_characterPath).GetSnapshotAsync().ContinueWithOnMainThread(task =>
-        {
-            Assert.IsNull(task.Exception);
+        _listenerRegistration = firestore.Document(_characterPath).Listen(snapshot =>
+         {
+             var characterData = snapshot.ConvertTo<CharacterData>();
 
-            var characterData = task.Result.ConvertTo<CharacterData>();
+             _nameText.text = $"Name: {characterData.Name}";
+             _descriptionText.text = $"Name: {characterData.Description}";
+             _attackText.text = $"Name: {characterData.Attack}";
+             _defenseText.text = $"Name: {characterData.Defense}";
+         });
 
-            _nameText.text = $"Name: {characterData.Name}";
-            _descriptionText.text = $"Name: {characterData.Description}";
-            _attackText.text = $"Name: {characterData.Attack}";
-            _defenseText.text = $"Name: {characterData.Defense}";
+    }
 
-        });
+    void OnDestroy()
+    {
+        _listenerRegistration.Stop();
     }
 
 }
