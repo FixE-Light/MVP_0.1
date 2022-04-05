@@ -12,8 +12,8 @@ public class FirebaseManager : MonoBehaviour
     [Header("Firebase")]
     public FirebaseAuth auth;
     public FirebaseUser user;
-    [Space(5f)]
 
+    [Space(5f)]
     [Header("Login Reference")]
     [SerializeField]
     private TMP_InputField loginEmail;

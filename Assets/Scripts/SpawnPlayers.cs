@@ -8,18 +8,28 @@ using UnityEngine;
 public class SpawnPlayers : MonoBehaviour
 {
     public GameObject player;
+    public FirebaseAuth auth;
+    public FirebaseUser user;
 
-    // [SerializeField]
-    // public FirebaseManager firebaseManager = null;
-
-    // [SerializeField]
-    // private TMP_Text Username;
+    [SerializeField] public TMP_Text UsernameText;
 
     public float minX, minY, maxX, maxY;
     public void Start()
     {
-        // Username.text = firebaseManager.user.DisplayName;
+        user = FirebaseManager.instance.user;
+        auth = FirebaseManager.instance.auth;
+
+        UsernameText.text = FirebaseManager.instance.user.DisplayName;
+
         Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         PhotonNetwork.Instantiate(player.name, randomPosition, Quaternion.identity);
+    }
+
+    public void SignOut()
+    {
+        if (auth != null)
+        {
+            auth.SignOut();
+        }
     }
 }
