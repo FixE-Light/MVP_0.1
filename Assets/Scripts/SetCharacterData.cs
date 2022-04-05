@@ -9,7 +9,7 @@ public class SetCharacterData : MonoBehaviour
     [SerializeField] private string _characterPath = "character_sheets/one_cool_dude";
 
     private string _nameField = "Dido";
-    private string _descriptionField = "Dido";
+    private string _descriptionField = "Test data";
     private int _attackField = 5;
     private int _defenseField = 7;
     [SerializeField] private Button _submitButton;
@@ -17,7 +17,7 @@ public class SetCharacterData : MonoBehaviour
     {
         _submitButton.onClick.AddListener(() =>
         {
-            var CharacterData = new CharacterData
+            var characterData = new CharacterData
             {
                 Name = _nameField,
                 Description = _descriptionField,
@@ -26,7 +26,7 @@ public class SetCharacterData : MonoBehaviour
             };
 
             var firestore = FirebaseFirestore.DefaultInstance;
-            firestore.Document(_characterPath).SetAsync(CharacterData);
+            firestore.Document(_characterPath).SetAsync(characterData);
         });
     }
 

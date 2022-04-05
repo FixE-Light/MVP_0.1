@@ -1,5 +1,6 @@
 using Firebase.Firestore;
 
+[FirestoreData]
 public struct CharacterData
 {
     [FirestoreProperty]
