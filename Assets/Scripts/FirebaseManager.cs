@@ -201,18 +201,17 @@ public class FirebaseManager : MonoBehaviour
             if (user.IsEmailVerified)
             {
                 loginOutputText.text = "some error 1";
-
-                Debug.Log("some error 1");
-
                 yield return new WaitForSeconds(2f);
-                GameManager.instance.ChangeScene(1);
+                // GameManager.instance.ChangeScene(1);
+
+                SceneManager.LoadScene("LoadingScene");
             }
             else
             {
                 loginOutputText.text = "some error 2";
+                // GameManager.instance.ChangeScene(1);
 
-                Debug.Log("some error 2");
-                GameManager.instance.ChangeScene(1);
+                SceneManager.LoadScene("LoadingScene");
             }
 
         }
