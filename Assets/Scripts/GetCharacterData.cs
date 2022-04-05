@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Firebase.Extensions;
 using Firebase.Firestore;
 using TMPro;
 using UnityEngine;
@@ -15,11 +16,15 @@ public class GetCharacterData : MonoBehaviour
     [SerializeField] private TMP_Text _attackText;
     [SerializeField] private TMP_Text _defenseText;
 
+    void Start()
+    {
+
+    }
     public void GetData()
     {
         var firestore = FirebaseFirestore.DefaultInstance;
 
-        firestore.Document(_characterPath).GetSnapshotAsync().ContinueWith(task =>
+        firestore.Document(_characterPath).GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
             Assert.IsNull(task.Exception);
 
