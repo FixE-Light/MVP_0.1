@@ -299,6 +299,7 @@ public class FirebaseManager : MonoBehaviour
                 else
                 {
                     Debug.Log($"Welcome To Wrath Of Balor Enjoy Your Time: {user.DisplayName} ({user.UserId}");
+                    StartCoroutine(LoginLogic(_email, _password));
                 }
 
             }
