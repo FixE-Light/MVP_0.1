@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65baf8fad9f7aa46b829367992c7aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2938778191349541159, guid: 7a804f0357dfc6040b6a7bb33d1ed991, type: 3}
+  player: {fileID: 6727162177406591926, guid: 461c534d25d681e46b56bfd8e63a6bbf, type: 3}
   minX: 2
   minY: 3
   maxX: 4
@@ -1197,7 +1197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173174320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11757573}
+        m_TargetAssemblyTypeName: SpawnPlayers, Assembly-CSharp
+        m_MethodName: SignOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1173174320
 MonoBehaviour:
   m_ObjectHideFlags: 0
