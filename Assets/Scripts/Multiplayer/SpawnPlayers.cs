@@ -8,6 +8,8 @@ using UnityEngine;
 public class SpawnPlayers : MonoBehaviour
 {
     public GameObject player;
+    public GameObject playerLocation;
+
     public FirebaseAuth auth;
     public FirebaseUser user;
 
@@ -18,6 +20,7 @@ public class SpawnPlayers : MonoBehaviour
         auth = FirebaseManager.instance.auth;
 
         Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        playerLocation.transform.position = randomPosition;
         PhotonNetwork.Instantiate(player.name, randomPosition, Quaternion.identity);
     }
 
