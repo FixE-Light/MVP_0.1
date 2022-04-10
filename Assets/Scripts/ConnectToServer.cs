@@ -13,7 +13,6 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     void Start()
     {
         Debug.Log("Try connection");
-
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -22,8 +21,6 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
         Debug.Log("connected to master");
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.JoinRandomRoom();
-
-        SceneManager.LoadScene("Main Menu");
     }
     public override void OnJoinedRoom()
     {
