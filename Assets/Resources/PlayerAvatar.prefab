@@ -268,8 +268,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ad117cf1513794e95858373c13d92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputField: {fileID: 0}
+  storeText: {fileID: 0}
+  ObjectPrefab: {fileID: 0}
+  createUI: {fileID: 0}
+  TextWindows: {fileID: 0}
+  spawnPoint: {fileID: 0}
   speed: 10
-  joystick: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  inputHorizontal: 0
+  inputVertical: 0
+  variableJoystick: {fileID: 0}
 --- !u!114 &5992078947997092016
 MonoBehaviour:
   m_ObjectHideFlags: 0

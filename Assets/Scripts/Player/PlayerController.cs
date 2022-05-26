@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController  Instance;
+    public static PlayerController Instance;
 
     public InputField inputField;
     public Text storeText;
@@ -19,11 +19,13 @@ public class PlayerController : MonoBehaviour
 
     public VariableJoystick variableJoystick;
     PhotonView view;
-    void Awake(){
+    void Awake()
+    {
         Instance = this;
     }
 
-    private void Start(){
+    private void Start()
+    {
         view = GetComponent<PhotonView>();
     }
     void Update()
@@ -47,39 +49,48 @@ public class PlayerController : MonoBehaviour
         //     //     Debug.DrawLine(Vector3.zero, touchPosition, Color.red);
         //     // }
         // }
-        if(!createUI.activeSelf && !TextWindows.activeSelf){
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical =Input.GetAxisRaw("Vertical");
-        MovePlayer(inputHorizontal, inputVertical);
-        JoyStick_Movement();
+        if (!createUI.activeSelf && !TextWindows.activeSelf)
+        {
+            inputHorizontal = Input.GetAxisRaw("Horizontal");
+            inputVertical = Input.GetAxisRaw("Vertical");
+            MovePlayer(inputHorizontal, inputVertical);
+            JoyStick_Movement();
         }
     }
-    void MovePlayer(float horizontal, float vertical){
-        if(horizontal > 0 || horizontal < 0){
+    void MovePlayer(float horizontal, float vertical)
+    {
+        if (horizontal > 0 || horizontal < 0)
+        {
             transform.Translate(transform.right * horizontal * speed * Time.deltaTime);
         }
-        else if(vertical > 0 || vertical < 0){
-             transform.Translate(transform.up * vertical * speed * Time.deltaTime);
+        else if (vertical > 0 || vertical < 0)
+        {
+            transform.Translate(transform.up * vertical * speed * Time.deltaTime);
         }
     }
 
-    void JoyStick_Movement(){
+    void JoyStick_Movement()
+    {
         Vector3 direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
         transform.Translate(direction * speed * Time.deltaTime);
         //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
 
-    public void SpawnObject(){
-        GameObject Instance = (GameObject)Instantiate(ObjectPrefab, spawnPoint.position, Quaternion.identity) as GameObject;
-        if(inputField.text != null){
-            Instance.GetComponent<InstanceManager>().StoreString = inputField.text;
+    public void SpawnObject()
+    {
+        PhotonNetwork.Instantiate(ObjectPrefab.name, spawnPoint.position, Quaternion.identity);
+        if (inputField.text != null)
+        {
+            ObjectPrefab.GetComponent<InstanceManager>().StoreString = inputField.text;
         }
         createUI.SetActive(false);
     }
-    public void Enbale_CreateUI(){
+    public void Enbale_CreateUI()
+    {
         createUI.SetActive(true);
     }
-    public void Disable_TextWindow(){
+    public void Disable_TextWindow()
+    {
         TextWindows.SetActive(false);
     }
 }

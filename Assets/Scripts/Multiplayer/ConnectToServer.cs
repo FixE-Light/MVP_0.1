@@ -24,7 +24,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("TestScene");
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
@@ -34,10 +34,24 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     }
     public void CreateRoom()
     {
+        Debug.Log(" creating room");
+
         System.Random rd = new System.Random();
 
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 2;
         PhotonNetwork.CreateRoom(rd.Next(100, 200).ToString());
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        Debug.Log(message + returnCode);
+        Debug.Log(" failed to create random game");
+    }
+
+    public override void OnCreatedRoom()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.JoinRandomRoom();
     }
 }
