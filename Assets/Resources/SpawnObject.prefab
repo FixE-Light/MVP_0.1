@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db20ad5d9f34c32d89f9566f34825df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoreString: fdfdf
+  StoreString: 43434
 --- !u!114 &-7472136439929167327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +132,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
